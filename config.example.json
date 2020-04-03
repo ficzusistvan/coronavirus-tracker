@@ -2,5 +2,6 @@
     "clientId": "",
     "clientSecret": "",
     "refreshToken": "",
-    "emails": "myfriend@yahoo.com, myotherfriend@yahoo.com"
+    "emailFrom": "myemail@gmail.com",
+    "emailsTo": "myfriend@yahoo.com, myotherfriend@yahoo.com"
 }

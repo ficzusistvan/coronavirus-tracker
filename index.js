@@ -27,7 +27,7 @@ const smtpTransport = nodemailer.createTransport({
      service: "gmail",
      auth: {
           type: "OAuth2",
-          user: "ficzus.istvan@gmail.com", 
+          user: nconf.get('emailFrom'), 
           clientId: CLIENT_ID,
           clientSecret: CLIENT_SECRET,
           refreshToken: REFRESH_TOKEN,
@@ -54,7 +54,7 @@ request({ uri: 'https://www.worldometers.info/coronavirus/'}, (error, response, 
         emailHtml += '<h3>' + key + ': ' + value + '</h3>';
     }
     
-    const countriesTable = $("#main_table_countries").parsetable();
+    const countriesTable = $("#main_table_countries_today").parsetable();
     
     for (var idx = 0; idx < countriesTable[0].length; idx++) {
         if (countriesTable[0][idx].includes('Romania')) {
@@ -69,8 +69,8 @@ request({ uri: 'https://www.worldometers.info/coronavirus/'}, (error, response, 
     }
 
     const mailOptions = {
-        from: 'ficzus.istvan@gmail.com',
-        to: nconf.get('emails'),
+        from: nconf.get('emailFrom'),
+        to: nconf.get('emailsTo'),
         subject: 'Coronavirus status',
         html: emailHtml
     };

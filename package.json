@@ -13,7 +13,7 @@
     "cheerio-tableparser": "^1.0.1",
     "googleapis": "^47.0.0",
     "jsonframe-cheerio": "^3.0.1",
-    "nconf": "^0.10.0",
+    "nconf": "^0.11.4",
     "nodemailer": "6.4.4",
     "request": "^2.88.2"
   }
